@@ -5,8 +5,10 @@
 Определить функции переназначения марки и грузоподъемности.*/
 
 #include <iostream>
+#include <sstream> 
 #include <string>
 #include <cstdio>
+#include <cassert>
 
 using namespace std;
 
@@ -18,16 +20,27 @@ class car{
     car(string x, int y, int z) : brand(x), countOfСylinders(y),power(z){}
     ~car(){};
     void print() {
-        printf("%s %d %d",brand,countOfСylinders,power);
+        printf("%s %d %d\n",brand.c_str(),countOfСylinders,power);
     }
 };
 
 class track:public car{
     public:
-    float 
-}
+    float bodyLoadСapacity;
+    track(string x, int y , int z , int w) : car(x,y,z), bodyLoadСapacity(w){}
+    ~track(){};
+    void print() {
+        printf("%s %d %d %.2f\n",brand.c_str(),countOfСylinders,power,bodyLoadСapacity);
+    }
+    void changeBrand(string x){
+        brand = x;
+    }
+    void changeBodyLoadСapacity(float x){
+        bodyLoadСapacity = x;
+    }
+};
 
-int main(){
+int main() {
 
     return 0;
 }
