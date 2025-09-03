@@ -13,3 +13,4 @@ venv/
 # IDE
 .idea/
 .vscode/
+a.out
