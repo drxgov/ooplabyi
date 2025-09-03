@@ -1,0 +1,15 @@
+# Компиляция Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Виртуальное окружение
+venv/
+.env/
+
+# Логи
+*.log
+
+# IDE
+.idea/
+.vscode/
