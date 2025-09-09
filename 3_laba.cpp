@@ -35,7 +35,7 @@ public:
         if (checkValue(y)) sStorona = y;
         else sStorona = 1;
         if (checkAngle(z)) angle = z;
-        else fStorona = 1;
+        else angle = 1;
     }
     bool isValid() const {
         return (fStorona > 0 && sStorona > 0 && angle > 0 && angle < 180);
@@ -70,38 +70,17 @@ public:
         if (temp == 3){
             double ns;
             ns = angle + angle * xChange / 100;
-            if (checkValue(ns)){
+            if (checkAngle(ns)){
                 angle = ns;
             }
         }
     }
     void print() const {
-        cout << "Боковая: " << fStorona  << " Основная: " << sStorona  << " Угол (рад): " << angle << endl;
+        cout << "Боковая: " << fStorona  << " Основная: " << sStorona  << " Угол: " << angle << endl;
     }
     double perimetr(){ return 2 * (fStorona + sStorona);}
     double square(){return fStorona * sStorona * sin(degToRad(angle ));}
     double height(){return sStorona*sin(degToRad(angle));}
-    double diag1(){}
-    void findDiagonales() const {
-        double d1 = sqrt(fStorona * fStorona + sStorona * sStorona - 2 * fStorona * sStorona * cos(degToRad(angle )));
-        double d2 = sqrt(fStorona * fStorona + sStorona * sStorona + 2 * fStorona * sStorona * cos(degToRad(angle )));
-        cout << "Первая диагональ: " << d1 << endl  << "Вторая диагональ: " << d2 << endl;
-    }
+    double diag1(){return sqrt(fStorona * fStorona + sStorona * sStorona - 2 * fStorona * sStorona * cos(degToRad(angle )));}
+    double diag2(){return sqrt(fStorona * fStorona + sStorona * sStorona + 2 * fStorona * sStorona * cos(degToRad(angle )));}
 };
-
-int main() {
-    Parallelogram test(-199, 200, 20); 
-    if (!test.isValid()) {
-        cout << "Объект некорректен!" << endl;
-        return 1;
-    }
-
-    test.print();
-    test.change();
-    test.print();
-    test.findPerimetrAndSquare();
-    test.findDiagonales();
-    test.findVisota();
-
-    return 0;
-}
