@@ -8,6 +8,8 @@ public:
     string facultet;
     int course;
     void print();
+    Student();
+    Student(const Student&);
     Student(string a, string fac, int b){
         name = a;
         facultet = fac;
