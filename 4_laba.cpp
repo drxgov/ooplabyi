@@ -2,6 +2,7 @@
 #include <cmath>
 #include <vector>
 #include <cassert>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -66,8 +67,6 @@ class parabola{
 
 int main() {
     cout << "=== Автотесты ===" << endl;
-
-    // Тест 1: сравнение одинаковых парабол
     parabola p1(1, -2, 1);
     parabola p2(1, -2, 1);
     assert(p1 == p2);
