@@ -5,7 +5,6 @@
 Определить функции переназначения марки и грузоподъемности.*/
 
 #include <iostream>
-#include <sstream> 
 #include <string>
 #include <cstdio>
 #include <cassert>
