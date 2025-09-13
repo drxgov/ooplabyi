@@ -50,7 +50,6 @@ public:
         int xChange;
         cout << "Введите на сколько процентов увеличить/уменьшить: ";
         cin >> xChange;
-        // if (temp == 1) setStorona(fStorona + fStorona * xChange / 100);
         if (temp == 1){
             double ns;
             ns = fStorona + fStorona * xChange / 100;
@@ -58,7 +57,6 @@ public:
                 fStorona = ns;
             }
         }
-        // else if (temp == 2) setStorona(sStorona + sStorona * xChange / 100);
         else if (temp == 2){
             double ns;
             ns = sStorona + sStorona * xChange / 100;
@@ -66,7 +64,6 @@ public:
                 sStorona = ns;
             }
         }
-        // else if (temp == 3) setAngle(angle + angle * xChange / 100);
         else if (temp == 3){
             double ns;
             ns = angle + angle * xChange / 100;

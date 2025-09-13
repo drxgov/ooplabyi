@@ -2,7 +2,6 @@
 #include <cmath>
 #include <vector>
 #include <cassert>
-#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -10,7 +9,7 @@ class parabola{
     public:
     double a,b,c;
     parabola(double x = 0,double y = 0, double z = 0) : a(x),b(y),c(z) {}
-    ~parabola(){}
+    ~parabola(){};
     
     void printParabola(){
         cout << "y = " << a << "x^2 ";
@@ -71,31 +70,21 @@ int main() {
     parabola p2(1, -2, 1);
     assert(p1 == p2);
     cout << "Тест 1 пройден ✅" << endl;
-
-    // Тест 2: сравнение разных парабол
     parabola p3(1, 0, -1);
     assert(!(p1 == p3));
     cout << "Тест 2 пройден ✅" << endl;
-
-    // Тест 3: пересечение в одной точке
     auto pts1 = p1 / p3; // x^2 - 2x + 1  и  x^2 - 1
     assert(pts1.size() == 1);
     assert(fabs(pts1[0] - 1.0) < 1e-9);
     cout << "Тест 3 пройден ✅" << endl;
-
-    // Тест 4: совпадающие параболы
     auto pts2 = p1 / p2;
     assert(pts2.empty());
     cout << "Тест 4 пройден ✅" << endl;
-
-    // Тест 5: две точки пересеченияв что то здесь еще есть
     parabola p4(1, 0, 0);   // y = x^2
     parabola p5(-1, 0, 0);  // y = -x^2
     auto pts3 = p4 / p5;    // 2x^2 = 0 => x=0, только одна точка!
     assert(pts3.size() == 1 && fabs(pts3[0]) < 1e-9);
     cout << "Тест 5 пройден ✅" << endl;
-
-    // Тест 6: нет пересечений
     parabola p6(1, 0, 1);  // y = x^2 
     parabola p7(1, 0, 5);  // y = x^2 + 5
     auto pts4 = p6 / p7;
