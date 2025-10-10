@@ -1,13 +1,5 @@
-/*Создать класс машина, содержащий в качестве параметров марку (строка), число цилиндров, мощность. 
-Определить конструкторы, деструктор и функцию печати. Создать public-производный класс грузовик, имеющий 
-дoполнительный вещественный параметр - грузоподъемность кузова.
-Определить конструкторы по умолчанию и с разным числом параметров, деструктор, функцию печати. 
-Определить функции переназначения марки и грузоподъемности.*/
-
 #include <iostream>
 #include <string>
-#include <cstdio>
-#include <cassert>
 
 using namespace std;
 
@@ -16,20 +8,20 @@ class car{
     string brand;
     int countOfСylinders;
     int power;
-    car(string x, int y, int z) : brand(x), countOfСylinders(y),power(z){}
+    car(string x = "", int y = 0, int z = 0) : brand(x), countOfСylinders(y),power(z){}
     ~car(){};
     void print() {
-        printf("%s %d %d\n",brand.c_str(),countOfСylinders,power);
-    }
+        cout << brand << " " << countOfСylinders << " " << power << endl;
+        }
 };
 
 class track:public car{
     public:
     float bodyLoadСapacity;
-    track(string x, int y , int z , float w) : car(x,y,z), bodyLoadСapacity(w){}
+    track(string x = "", int y  = 0, int z = 0, float w = 0) : car(x,y,z), bodyLoadСapacity(w){}
     ~track(){};
     void print() {
-        printf("%s %d %d %.2f\n",brand.c_str(),countOfСylinders,power,bodyLoadСapacity);
+        cout << brand << " " << countOfСylinders << " " << power << " " << bodyLoadСapacity << endl;
     }
     void changeBrand(string x){
         brand = x;
